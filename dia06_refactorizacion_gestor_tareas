@@ -1,0 +1,164 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Día 6 — Mejora y refactorización\n",
+        "\n",
+        "En este día voy a reconstruir y mejorar el gestor de tareas\n",
+        "para entender mejor el código y hacerlo más claro.\n",
+        "\n",
+        "Objetivos:\n",
+        "- escribir el programa completo desde cero\n",
+        "- mejorar la experiencia de uso\n",
+        "- ordenar el código\n",
+        "- consolidar lo aprendido\n",
+        "\n",
+        "Reto: 100 días aprendiendo a programar  \n",
+        "Día: 6/100\n"
+      ],
+      "metadata": {
+        "id": "kUPzLrMvsMvd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9A3SSoflsKMK",
+        "outputId": "690eb140-7b57-4a5a-f085-613ba82daea1"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bienvenida al gestor de tareas\n",
+            "Vamos a añadir tus tareas paso a paso\n",
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "tareas = []\n",
+        "\n",
+        "print(\"Bienvenida al gestor de tareas\")\n",
+        "print(\"Vamos a añadir tus tareas paso a paso\\n\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "seguir = \"sí\"\n",
+        "\n",
+        "while seguir == \"sí\":\n",
+        "    titulo = input(\"Introduce el título de la tarea: \")\n",
+        "    estado = input(\"¿Está completada? (sí/no): \").lower()\n",
+        "\n",
+        "    if estado != \"sí\" and estado != \"no\":\n",
+        "        estado = \"no\"\n",
+        "\n",
+        "    tarea = {\n",
+        "        \"titulo\": titulo,\n",
+        "        \"estado\": estado\n",
+        "    }\n",
+        "\n",
+        "    tareas.append(tarea)\n",
+        "\n",
+        "    seguir = input(\"¿Quieres añadir otra tarea? (sí/no): \").lower()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "heelQJUeuYLb",
+        "outputId": "4c325e08-4713-4a00-e84c-44736bff67e8"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Introduce el título de la tarea: Lección 6 de Python\n",
+            "¿Está completada? (sí/no): no\n",
+            "¿Quieres añadir otra tarea? (sí/no): si\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\n Lista de tareas:\")\n",
+        "\n",
+        "for i, tarea in enumerate(tareas, start=1):\n",
+        "  print(i, \"-\", tarea[\"titulo\"], \"| Estado\", tarea[\"estado\"])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mFmVNr1Futa8",
+        "outputId": "cf61c0d3-1716-420c-92ef-8e23bcb11726"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            " Lista de tareas:\n",
+            "1 - Lección 6 de Python | Estado no\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Reflexión del Día 6\n",
+        "\n",
+        "Hoy he reconstruido el gestor de tareas desde cero en un nuevo cuaderno.\n",
+        "\n",
+        "Esto me ha ayudado a:\n",
+        "- entender mejor la estructura del programa\n",
+        "- evitar dependencias entre archivos\n",
+        "- escribir código más claro\n",
+        "- ganar confianza leyendo y creando código\n",
+        "\n",
+        "Rehacer un proyecto también es aprender.\n"
+      ],
+      "metadata": {
+        "id": "7pwBbeedvSzV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Fa8G6DJtvP9g"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
